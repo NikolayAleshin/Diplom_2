@@ -19,6 +19,18 @@ public class RestSend extends RestAssuredClient {
     }
 
     @Step
+    public <T> Response postRequestAndReturnResponse(T requestBody, RestUrl url, String token) {
+
+        return given()
+                .spec(getBaseSpec())
+                .header("authorization", token)
+                .and()
+                .body(requestBody)
+                .when()
+                .post(url.getId());
+    }
+
+    @Step
     public <T> Response patchRequestAndReturnResponse(T requestBody, RestUrl url, String token) {
 
         return given()

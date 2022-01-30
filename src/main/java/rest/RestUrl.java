@@ -6,7 +6,7 @@ public enum RestUrl {
     REGISTER_USER("/api/auth/register"),
     AUTHORIZATION_USER("/api/auth/login"),
     EDIT_DATA_USER("/api/auth/user"),
-    DELETE_COURIER_URL("/api/v1/courier/");
+    ORDER("/api/orders");
 
     private final String id;
 
