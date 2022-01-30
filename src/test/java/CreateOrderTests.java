@@ -25,7 +25,7 @@ public class CreateOrderTests extends InitializationTests {
 
         Assert.assertEquals(200, responseNewOrder.getStatusCode());
         Assert.assertTrue(orderResponse.getSuccess());
-        Assert.assertEquals("Флюоресцентный бессмертный бургер", orderResponse.getName());
+        Assert.assertFalse(orderResponse.getName().isEmpty());
         Assert.assertNotNull(orderResponse.getOrder().getNumber());
     }
 
